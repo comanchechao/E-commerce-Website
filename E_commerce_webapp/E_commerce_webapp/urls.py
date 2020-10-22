@@ -9,7 +9,7 @@ urlpatterns = [
 
     url(r'^accounts/', include('accounts.urls')),
     path('', frontpage, name="frontpage"),
-    path('cart/' , cart , name="cart"),
+    path('cart/' , cart_detail , name="cart"),
     path('contact/', contactpage , name="contact"),
     path('about/', aboutspage, name="abouts"),
     path('<slug:category_slug>/<slug:slug>', product_detail, name="product_detail"),
