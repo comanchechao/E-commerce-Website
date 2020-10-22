@@ -1,12 +1,12 @@
 from django.db import models
 
 # Create your models here.
-class Catagory(models.Model):
+class Category(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
 
     class Meta:
-        verbose_name_plural = 'catagories'
+        verbose_name_plural = 'categories'
 
 
     def __str__(self):
@@ -14,7 +14,7 @@ class Catagory(models.Model):
 
 
 class Product(models.Model):
-    catagory = models.ForeignKey(Catagory, related_name="Products", on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, related_name="Products", on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
     description = models.TextField(blank=True, null=True)
